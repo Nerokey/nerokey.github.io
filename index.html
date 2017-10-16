@@ -264,31 +264,71 @@
 <li>图片的写法和链接几乎一样只是前面多了一个!用来表示图片。</li>
 </ul>
 <p><strong>7、 代码框</strong><br>这个就很重要了，很多时候你都只是想吧自己的代码贴上去。这时候就要用到这个了。<br>如果代码只有一行，那很简单，直接用`引起来就好了。<br>如果代码是多行的话，就需要用```表示开始，同样用三个点表示结束，代码写在中间<br>像这样</p>
-<p>###代码的写法<br><img src="http://oxua0flmy.bkt.clouddn.com/20171016221312.png" alt="代码写法"></p>
-<p>显示效果：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001164549.png" alt="代码显示"></p>
-</blockquote>
-<p><strong>8、 表格</strong><br>这个写起来有点麻烦，其实有点像你就是在用符号画表格。<br>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#### 表格</div><div class="line">| name | age | sex |</div><div class="line">|:----:|:---:|:---:|</div><div class="line">| Tom  | 28  |  男 |</div><div class="line">| Jany | 23  |  女 |</div><div class="line">| Lucy | 26  |  女 |</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001165220.png" alt="表格图1"></p>
-</blockquote>
-<p>或者这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#### 表格</div><div class="line"> 姓名|语文|数学|英语</div><div class="line"> -|-|-|-</div><div class="line"> Tom|80|70|84</div><div class="line"> Jane|90|88|92</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001165849.png" alt="表格图2"></p>
-</blockquote>
-<p><strong>9、 强调</strong><br>强调就是加粗和倾斜还有删除线，有的时候用得着。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#### 倾斜</div><div class="line">_倾斜_</div><div class="line">*倾斜*</div><div class="line">#### 加粗</div><div class="line">__加粗__</div><div class="line">**加粗**</div><div class="line">#### 删除线</div><div class="line">~~删除线~~</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001170544.png" alt="强调"></p>
-</blockquote>
-<p><strong>10、 转义字符</strong><br>其实就是有些符号代表了特殊意义导致无法输入，这时候就需要转义字符了。其实很简单，转义字符和js的转义字符是一样的，这里我就列几个常用的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#### 转义字符</div><div class="line">* \\</div><div class="line">* \`</div><div class="line">* \*</div><div class="line">* \-</div><div class="line">* \+</div><div class="line">* \!</div></pre></td></tr></table></figure>
+<p>代码的写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">###单行代码</div><div class="line">`&lt;p&gt;&lt;a href=&quot;https://www.baidu.com&quot; title=&quot;说明&quot;&gt;&lt;/a&gt;百度&lt;/p&gt;`</div><div class="line">###多行代码</div></pre></td></tr></table></figure></p>
+<p> &lt;!DOCTYPE html&gt;<br> <html lang="en"><br> <head><br>    <meta charset="UTF-8"><br>    <title>Document</title><br> </head><br> <body><br>    <p>这里是多行代码</p><br> </body><br> </html><br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">显示效果：</div><div class="line">&gt; ![代码显示](http://oxua0flmy.bkt.clouddn.com/20171001164549.png)</div><div class="line"></div><div class="line">**8、 表格**</div><div class="line">这个写起来有点麻烦，其实有点像你就是在用符号画表格。</div><div class="line">例如：</div></pre></td></tr></table></figure></p>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">name</th>
+<th style="text-align:center">age</th>
+<th style="text-align:center">sex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Tom</td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">男</td>
+</tr>
+<tr>
+<td style="text-align:center">Jany</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">女</td>
+</tr>
+<tr>
+<td style="text-align:center">Lucy</td>
+<td style="text-align:center">26</td>
+<td style="text-align:center">女</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果图：</div><div class="line">&gt; ![表格图1](http://oxua0flmy.bkt.clouddn.com/20171001165220.png)</div><div class="line"></div><div class="line">或者这样写：</div></pre></td></tr></table></figure>
+<h4 id="表格-1"><a href="#表格-1" class="headerlink" title="表格"></a>表格</h4><table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>语文</th>
+<th>数学</th>
+<th>英语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> Tom</td>
+<td>80</td>
+<td>70</td>
+<td>84</td>
+</tr>
+<tr>
+<td> Jane</td>
+<td>90</td>
+<td>88</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果图：</div><div class="line">&gt; ![表格图2](http://oxua0flmy.bkt.clouddn.com/20171001165849.png)</div><div class="line"></div><div class="line">**9、 强调**</div><div class="line">强调就是加粗和倾斜还有删除线，有的时候用得着。</div></pre></td></tr></table></figure>
+<h4 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h4><p><em>倾斜</em><br><em>倾斜</em></p>
+<h4 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h4><p><strong>加粗</strong><br><strong>加粗</strong></p>
+<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><p><del>删除线</del><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">效果图：</div><div class="line">&gt; ![强调](http://oxua0flmy.bkt.clouddn.com/20171001170544.png)</div><div class="line"></div><div class="line">**10、 转义字符**</div><div class="line">其实就是有些符号代表了特殊意义导致无法输入，这时候就需要转义字符了。其实很简单，转义字符和js的转义字符是一样的，这里我就列几个常用的。</div></pre></td></tr></table></figure></p>
+<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><ul>
+<li>\</li>
+<li>`</li>
+<li>*</li>
+<li>-</li>
+<li>+</li>
+<li>!<br>```</li>
+</ul>
 <p>效果图：</p>
 <blockquote>
 <p><img src="http://oxua0flmy.bkt.clouddn.com/20171001171035.png" alt="转义字符"></p>
