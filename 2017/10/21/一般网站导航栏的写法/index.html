@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="#今天我们用html+css实现一些网站导航栏效果###很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能 ###比如说下面这个网站：  1、我们首先用两个盒子来说明下原理12345678910111213141516171819202122232425262728&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt">
+<meta name="description" content="#今天我们用html+css实现一些网站导航栏效果###很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能 ###比如说下面这个网站：">
 <meta name="keywords" content="html,css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一般网站导航栏的写法">
 <meta property="og:url" content="http://www.nerokey.iofo/2017/10/21/一般网站导航栏的写法/index.html">
 <meta property="og:site_name" content="Nerokey的博客">
-<meta property="og:description" content="#今天我们用html+css实现一些网站导航栏效果###很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能 ###比如说下面这个网站：  1、我们首先用两个盒子来说明下原理12345678910111213141516171819202122232425262728&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt">
+<meta property="og:description" content="#今天我们用html+css实现一些网站导航栏效果###很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能 ###比如说下面这个网站：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/20171021155103.png">
 <meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/hexo/20171021160045.png">
-<meta property="og:updated_time" content="2017-10-21T08:10:06.003Z">
+<meta property="og:updated_time" content="2017-10-21T08:11:56.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一般网站导航栏的写法">
-<meta name="twitter:description" content="#今天我们用html+css实现一些网站导航栏效果###很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能 ###比如说下面这个网站：  1、我们首先用两个盒子来说明下原理12345678910111213141516171819202122232425262728&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt">
+<meta name="twitter:description" content="#今天我们用html+css实现一些网站导航栏效果###很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能 ###比如说下面这个网站：">
 <meta name="twitter:image" content="http://oxua0flmy.bkt.clouddn.com/20171021155103.png">
 
 
@@ -403,6 +403,7 @@
       
         <h2 id="今天我们用html-css实现一些网站导航栏效果"><a href="#今天我们用html-css实现一些网站导航栏效果" class="headerlink" title="#今天我们用html+css实现一些网站导航栏效果"></a>#今天我们用html+css实现一些网站导航栏效果</h2><p>###很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能</p>
 <p>###比如说下面这个网站：<br><img src="http://oxua0flmy.bkt.clouddn.com/20171021155103.png" alt="网站实例"></p>
+<a id="more"></a>
 <ul>
 <li>1、我们首先用两个盒子来说明下原理<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		.box&#123;</div><div class="line">			height: 30px;</div><div class="line">			width: 60px;</div><div class="line">			background-color: #ccc;</div><div class="line">		&#125;</div><div class="line">		.show&#123;</div><div class="line">			display: none;</div><div class="line">			height: 50px;</div><div class="line">			width: 100px;</div><div class="line">			background-color: #fcc;</div><div class="line">		&#125;</div><div class="line">		.box:hover .show&#123;</div><div class="line">			display: block;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;box&quot;&gt;盒子1</div><div class="line">		&lt;div class=&quot;show&quot;&gt;盒子2&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 </li>
