@@ -91,7 +91,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/hexo/20171022171805.png">
 <meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/hexo/20171022172508.png">
-<meta property="og:updated_time" content="2017-10-22T09:47:04.982Z">
+<meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/20171022175355.png">
+<meta property="og:updated_time" content="2017-10-22T09:55:21.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中不借助中间变量交换两数的值">
 <meta name="twitter:description" content="交换数值我们一般借助一个中间中间变量，这样会变得简单明了。然而在面试的时候很多面试官就喜欢这样来问你，这时候如果你回答出来了就能显得你稍稍厉害一些。 今天我们就来看看Java中是如何不借助第三个变量来交换数值的再此之前我们先看下借助第三个变量来交换法1234567891011121314public class Exchange1 &amp;#123;		public static void main(S">
@@ -414,7 +415,7 @@
 <p>2．位运算法</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Exchange3 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int x = 16;</div><div class="line">		int y = 21;</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">		x = x^y;</div><div class="line">		y = y^x;</div><div class="line">		x = y^x;</div><div class="line">		System.out.println(&quot;--------交换后--------&quot;);</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这里我们用到的位运算是异或运算。不明白的同学可以将两个数化成二进制一步一步算一下就能明白了。<br><br></p>
+<p>结果为：<br><img src="http://oxua0flmy.bkt.clouddn.com/20171022175355.png" alt=""><br>这里我们用到的位运算是异或运算。不明白的同学可以将两个数化成二进制一步一步算一下就能明白了。<br><br></p>
 <blockquote>
 <p>好了，这就是java中不借助第三个变量来实现两个数的数值互换的两种基本方法，<br>可能还有更高级的方法，就不一一列举了。</p>
 </blockquote>
