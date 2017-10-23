@@ -1,211 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[Java中不借助中间变量交换两数的值]]></title>
-      <url>/2017/10/22/Java%E4%B8%AD%E4%B8%8D%E5%80%9F%E5%8A%A9%E4%B8%AD%E9%97%B4%E5%8F%98%E9%87%8F%E4%BA%A4%E6%8D%A2%E4%B8%A4%E6%95%B0%E7%9A%84%E5%80%BC/</url>
-      <content type="html"><![CDATA[<p>交换数值我们一般借助一个中间中间变量，这样会变得简单明了。然而在面试的时候很多面试官就喜欢这样来问你，这时候如果你回答出来了就能显得你稍稍厉害一些。</p>
-<h2 id="今天我们就来看看Java中是如何不借助第三个变量来交换数值的"><a href="#今天我们就来看看Java中是如何不借助第三个变量来交换数值的" class="headerlink" title="今天我们就来看看Java中是如何不借助第三个变量来交换数值的"></a>今天我们就来看看Java中是如何不借助第三个变量来交换数值的</h2><p><br><br>再此之前我们先看下借助第三个变量来交换法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Exchange1 &#123;</div><div class="line">	</div><div class="line">	public static void main(String[] args) &#123;	</div><div class="line">		int x = 10;</div><div class="line">		int y = 18;</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">		System.out.println(&quot;---------交换后------------&quot;);</div><div class="line">		int temp;</div><div class="line">		temp = x;</div><div class="line">		x = y;</div><div class="line">		y = temp;</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>结果为：<br><img src="http://oxua0flmy.bkt.clouddn.com/hexo/20171022171805.png" alt=""><br><br><br>方法有两种：其一是通过数学方法，对这两个数进行某些数学运算；其二是通过位运算。</p>
-<blockquote>
-<p>　１．数学运算法</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Exchange2 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int x = 7;</div><div class="line">		int y = 4;</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">		x = x+y;   //x=11</div><div class="line">		y = x-y;   //y=7</div><div class="line">		x = x-y;   //x=4</div><div class="line">		System.out.println(&quot;--------交换后--------&quot;);</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果为：<br><img src="http://oxua0flmy.bkt.clouddn.com/hexo/20171022172508.png" alt=""><br><br></p>
-<blockquote>
-<p>2．位运算法</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">public class Exchange3 &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int x = 16;</div><div class="line">		int y = 21;</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">		x = x^y;</div><div class="line">		y = y^x;</div><div class="line">		x = y^x;</div><div class="line">		System.out.println(&quot;--------交换后--------&quot;);</div><div class="line">		System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>结果为：<br><img src="http://oxua0flmy.bkt.clouddn.com/20171022175355.png" alt=""><br>这里我们用到的位运算是异或运算。不明白的同学可以将两个数化成二进制一步一步算一下就能明白了。<br><br></p>
-<blockquote>
-<p>好了，这就是java中不借助第三个变量来实现两个数的数值互换的两种基本方法，<br>可能还有更高级的方法，就不一一列举了。</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> Java </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[一般网站导航栏的写法]]></title>
-      <url>/2017/10/21/%E4%B8%80%E8%88%AC%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84%E5%86%99%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h1 id="今天我们用html-css实现一些网站导航栏效果"><a href="#今天我们用html-css实现一些网站导航栏效果" class="headerlink" title="今天我们用html+css实现一些网站导航栏效果"></a>今天我们用html+css实现一些网站导航栏效果</h1><hr>
-<p> 很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能<br> 比如说下面这个网站：<br><img src="http://oxua0flmy.bkt.clouddn.com/20171021155103.png" alt="网站实例"></p>
-<a id="more"></a>
-<h2 id="1、我们首先用两个盒子来说明下原理"><a href="#1、我们首先用两个盒子来说明下原理" class="headerlink" title="1、我们首先用两个盒子来说明下原理"></a>1、我们首先用两个盒子来说明下原理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		.box&#123;</div><div class="line">			height: 30px;</div><div class="line">			width: 60px;</div><div class="line">			background-color: #ccc;</div><div class="line">		&#125;</div><div class="line">		.show&#123;</div><div class="line">			display: none;</div><div class="line">			height: 50px;</div><div class="line">			width: 100px;</div><div class="line">			background-color: #fcc;</div><div class="line">		&#125;</div><div class="line">		.box:hover .show&#123;</div><div class="line">			display: block;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;box&quot;&gt;盒子1</div><div class="line">		&lt;div class=&quot;show&quot;&gt;盒子2&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>原本只显示盒子1，当鼠标放上去后便会展开盒子2了。<br><img src="http://oxua0flmy.bkt.clouddn.com/hexo/20171021160045.png" alt=""><br>首先html部分很简单，就是两个盒子的嵌套<br>然后看css部分：<br>➀ 我们先将盒子2设置display:none将其隐藏<br>➁<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box:hover .show&#123;</div><div class="line">    display: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这一段的意思就是当鼠标放在.box类上是对.show类操作。前提是.show得是.box的子集，就是包含在.box中这里我们设置的是将.show类展开，即display:block。<br>这样就实现了我们的核心功能。</p>
-<h2 id="2、接下来我们做上面示例图中的导航页面"><a href="#2、接下来我们做上面示例图中的导航页面" class="headerlink" title="2、接下来我们做上面示例图中的导航页面"></a>2、接下来我们做上面示例图中的导航页面</h2><p>只要理解了原理，做出图例的样式其实很简单了<br>代码如下：</p>
-<h4 id="①-首先是html代码"><a href="#①-首先是html代码" class="headerlink" title="① 首先是html代码"></a>① 首先是html代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&lt;a href=&quot;#&quot; class=&quot;head&quot;&gt;首页&lt;/a&gt;</div><div class="line">	&lt;div class=&quot;box&quot;&gt;评价任务 ▾</div><div class="line">		&lt;div class=&quot;show&quot;&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;评价任务&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;topborder&quot;&gt;淘宝问大家&lt;/a&gt;&lt;/li&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>这是body部分代码，很简单。就是写了个a标记，然后一个div里面再嵌一个div实现。</p>
-<h4 id="②-CSS部分代码"><a href="#②-CSS部分代码" class="headerlink" title="② CSS部分代码"></a>② CSS部分代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">	*&#123;margin: 0;padding: 0;&#125;</div><div class="line">	body&#123;</div><div class="line">		margin: 60px;</div><div class="line">	&#125;</div><div class="line">	.head, .box&#123;</div><div class="line">		float: left;</div><div class="line">		line-height: 50px;</div><div class="line">		width: 200px;</div><div class="line">		background-color: #4882F0;</div><div class="line">		color:#fff;</div><div class="line">		text-decoration: none;</div><div class="line">		text-align: center;</div><div class="line">	&#125;</div><div class="line">	.box&#123;</div><div class="line">		overflow: hidden;</div><div class="line">	&#125;</div><div class="line">	.show&#123;</div><div class="line">		display: none;</div><div class="line">		border: 1px dotted #ccc;</div><div class="line">	&#125;</div><div class="line">	.box:hover&#123;</div><div class="line">		font-weight: bold;</div><div class="line">		background-color: #3B6CCA;</div><div class="line">	&#125;</div><div class="line">	.head:hover&#123;</div><div class="line">		font-weight: bold;</div><div class="line">		background-color: #3B6CCA;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	.box:hover .show&#123;</div><div class="line">		font-weight: normal;</div><div class="line">		display: block;</div><div class="line">		background-color: #fff;</div><div class="line">		border-top:2px solid #F09628;</div><div class="line">	&#125;</div><div class="line">	.topborder&#123;</div><div class="line">		border-top:1px dotted #ccc;</div><div class="line">	&#125;</div><div class="line">	li&#123;</div><div class="line">		display: inline-block;	</div><div class="line">	&#125;</div><div class="line">	.show a&#123;</div><div class="line">		text-align:center;</div><div class="line">		padding: 10px 50px;</div><div class="line">		text-decoration: none;</div><div class="line">		color:#000;</div><div class="line">	&#125;</div><div class="line">	.show a:hover&#123;</div><div class="line">		color:#F09628;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<p>结构很清晰，这样就能实现示例图的效果了。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实我们只要理解前面的盒子嵌套模型，其他的就都是一样的原理，万变不离其宗。都是一个道理。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> html </tag>
-            
-            <tag> css </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Markdown文件的基本书写]]></title>
-      <url>/2017/10/01/md%E6%96%87%E4%BB%B6%E7%9A%84%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F/</url>
-      <content type="html"><![CDATA[<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001115221.png" alt="首页图"></p>
-<h3 id="1-首先推荐一个在线编辑器"><a href="#1-首先推荐一个在线编辑器" class="headerlink" title="1. 首先推荐一个在线编辑器"></a><strong>1. 首先推荐一个在线编辑器</strong></h3><blockquote>
-<h4 id="Cmd-Markdown在线编辑器，可以实时预览到博客的样子"><a href="#Cmd-Markdown在线编辑器，可以实时预览到博客的样子" class="headerlink" title="Cmd Markdown在线编辑器，可以实时预览到博客的样子"></a>Cmd Markdown在线编辑器，可以实时预览到博客的样子</h4><h4 id="点击Markdown进入开始编写。"><a href="#点击Markdown进入开始编写。" class="headerlink" title="点击Markdown进入开始编写。"></a>点击<a href="https://www.zybuluo.com/" target="_blank" rel="external">Markdown</a>进入开始编写。</h4></blockquote>
-<a id="more"></a>
-<h3 id="2-Markdown的基本语法"><a href="#2-Markdown的基本语法" class="headerlink" title="2. Markdown的基本语法"></a><strong>2. Markdown的基本语法</strong></h3><p><strong>1、 标题的写法</strong><br>用#号表示标题，比如说“#一级标题”表示一级标题，相当于html中的h1。和html一样也是有6级标题的，分别用“#”，“##”，“###”，······ 以此类推表示标题。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 这是一级标题</div><div class="line">## 这是二级标题</div><div class="line">### 这是三级标题</div><div class="line">#### 这是四级标题</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001095254.png" alt="图片实例"></p>
-</blockquote>
-<ul>
-<li>或者可以这样写</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 这是一级标题 #</div><div class="line">## 这是二级标题 ##</div><div class="line">### 这是三级标题 ###</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001114734.png" alt="图片实例"></p>
-</blockquote>
-<p> 这样就相当于有了闭合标签<br>一般来说选择第一种写法，比较方便快捷；注意#和标题内容之间有空格。</p>
-<hr>
-<p><strong>2、 列表</strong></p>
-<ul>
-<li>列表分为有序列表和无序列表。<br>下面直接展示写法和效果</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#### 无序列表</div><div class="line">* 1</div><div class="line">    * 1.1</div><div class="line">        * 1.1.1</div><div class="line">* 2</div><div class="line">* 3</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001120348.png" alt="无序列表"></p>
-</blockquote>
-<p>可以看到如果代码缩进就会变成次级列表，出来*号可以用来表示列表以外，还可以使用+，-来表示无序列表。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#### 有序列表</div><div class="line">1. 有序列表1 </div><div class="line">    1. 次级列表</div><div class="line">2. 有序列表2 </div><div class="line">3. 有序列表3</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001121123.png" alt="有序列表"></p>
-</blockquote>
-<p><strong>3、 区块引用</strong></p>
-<ul>
-<li><p>如果你想把某些内容放在一起或者是引用某某某的话时就可以使用引用了。<br>使用也很简单就是在你要引用话之前加一个&gt;，注意是英文箭头，还有在&gt;和话之间是需要空格的</p>
-<p>比如这样：</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; ### 这是引用</div><div class="line">&gt; * 不以结婚为目的的谈恋爱都是耍流氓</div><div class="line">&gt;     &gt; 这是毛主席说的</div><div class="line">&gt; * 前方高能</div><div class="line">&gt;     &gt; 注意：这里是为了提醒前面很刺激</div><div class="line">&gt;     &gt; 的事情要发生</div></pre></td></tr></table></figure>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001122229.png" alt="区块实例"></p>
-<ul>
-<li>同样引用也是可以嵌套的<br>比如这样：</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; 一级引用</div><div class="line">&gt;&gt; 二级引用</div><div class="line">&gt;&gt;&gt; 三级引用</div><div class="line">&gt;&gt;&gt;&gt; 四级引用</div><div class="line">&gt;&gt;&gt;&gt;&gt; 五级引用</div></pre></td></tr></table></figure>
-<p>效果如下：<br><img src="http://oxua0flmy.bkt.clouddn.com/20171001122548.png" alt="引用效果"><br>多级引用嵌套可以不要连在一起的，中间允许有空格，只要在一行就行</p>
-<p><strong>4、分割线</strong><br> 分割线可以由 *，-，_这3个符号最少3个，可连续也可不连续，最少3个就行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">___</div><div class="line">*   *   *</div><div class="line">***</div></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001135907.png" alt="分割线效果"></p>
-</blockquote>
-<ul>
-<li>不过一般情况我们选择 ——–这个符号，因为易写，直观明了。</li>
-</ul>
-<p><strong>5、 链接</strong><br>链接的写法有两种：行内式和参数式，不管是哪一种，链接文字都需要用[]来标记</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">##### 行内式</div><div class="line">[行内式](https://www.baidu.com)链接的写法</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001141000.png" alt="行内式"></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#### 参数式</div><div class="line">[name]:https://www.baidu.com</div><div class="line">[主页]:https://www.baidu.com</div><div class="line"></div><div class="line">这里是 [name]，这里是[主页]</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001141432.png" alt="参数式"></p>
-</blockquote>
-<ul>
-<li>一般会这两种方法就差不多了</li>
-</ul>
-<p><strong>6、 图片</strong><br>图片的写法就和链接基本一样了。<br>这里就直接给出写法，很容易理解的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#### 图片的写法</div><div class="line">这里放图片![我是图片](http://i4.bvimg.com/524586/602c9d1be6eecc97s.png)</div></pre></td></tr></table></figure>
-<p>显示效果：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001142450.png" alt="图片"></p>
-</blockquote>
-<ul>
-<li>图片的写法和链接几乎一样只是前面多了一个!用来表示图片。</li>
-</ul>
-<p><strong>7、 代码框</strong><br>这个就很重要了，很多时候你都只是想吧自己的代码贴上去。这时候就要用到这个了。<br>如果代码只有一行，那很简单，直接用`引起来就好了。<br>如果代码是多行的话，就需要用```表示开始，同样用三个点表示结束，代码写在中间<br>像这样</p>
-<p>代码的写法：<br><img src="http://oxua0flmy.bkt.clouddn.com/20171016221312.png" alt="代码的写法"></p>
-<p>显示效果：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001164549.png" alt="代码显示"></p>
-</blockquote>
-<p><strong>8、 表格</strong><br>这个写起来有点麻烦，其实有点像你就是在用符号画表格。<br>例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#### 表格</div><div class="line">| name | age | sex |</div><div class="line">|:----:|:---:|:---:|</div><div class="line">| Tom  | 28  |  男 |</div><div class="line">| Jany | 23  |  女 |</div><div class="line">| Lucy | 26  |  女 |</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001165220.png" alt="表格图1"></p>
-</blockquote>
-<p>或者这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#### 表格</div><div class="line"> 姓名|语文|数学|英语</div><div class="line"> -|-|-|-</div><div class="line"> Tom|80|70|84</div><div class="line"> Jane|90|88|92</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001165849.png" alt="表格图2"></p>
-</blockquote>
-<p><strong>9、 强调</strong><br>强调就是加粗和倾斜还有删除线，有的时候用得着。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#### 倾斜</div><div class="line">_倾斜_</div><div class="line">*倾斜*</div><div class="line">#### 加粗</div><div class="line">__加粗__</div><div class="line">**加粗**</div><div class="line">#### 删除线</div><div class="line">~~删除线~~</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001170544.png" alt="强调"></p>
-</blockquote>
-<p><strong>10、 转义字符</strong><br>其实就是有些符号代表了特殊意义导致无法输入，这时候就需要转义字符了。其实很简单，转义字符和js的转义字符是一样的，这里我就列几个常用的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#### 转义字符</div><div class="line">* \\</div><div class="line">* \`</div><div class="line">* \*</div><div class="line">* \-</div><div class="line">* \+</div><div class="line">* \!</div></pre></td></tr></table></figure>
-<p>效果图：</p>
-<blockquote>
-<p><img src="http://oxua0flmy.bkt.clouddn.com/20171001171035.png" alt="转义字符"></p>
-</blockquote>
-<p><strong>编写md文件的基本语法差不多就这些了，也是从网上各处整理的。日后如果需要再进行补充。</strong></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 教程 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> md语法 </tag>
-            
-            <tag> md书写格式 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[Java中不借助中间变量交换两数的值]]></title>
+    <url>%2F2017%2F10%2F22%2FJava%E4%B8%AD%E4%B8%8D%E5%80%9F%E5%8A%A9%E4%B8%AD%E9%97%B4%E5%8F%98%E9%87%8F%E4%BA%A4%E6%8D%A2%E4%B8%A4%E6%95%B0%E7%9A%84%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[交换数值我们一般借助一个中间中间变量，这样会变得简单明了。然而在面试的时候很多面试官就喜欢这样来问你，这时候如果你回答出来了就能显得你稍稍厉害一些。 今天我们就来看看Java中是如何不借助第三个变量来交换数值的再此之前我们先看下借助第三个变量来交换法1234567891011121314public class Exchange1 &#123; public static void main(String[] args) &#123; int x = 10; int y = 18; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); System.out.println(&quot;---------交换后------------&quot;); int temp; temp = x; x = y; y = temp; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); &#125;&#125; 结果为：方法有两种：其一是通过数学方法，对这两个数进行某些数学运算；其二是通过位运算。 １．数学运算法 123456789101112public class Exchange2 &#123; public static void main(String[] args) &#123; int x = 7; int y = 4; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); x = x+y; //x=11 y = x-y; //y=7 x = x-y; //x=4 System.out.println(&quot;--------交换后--------&quot;); System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); &#125;&#125; 结果为： 2．位运算法 123456789101112public class Exchange3 &#123; public static void main(String[] args) &#123; int x = 16; int y = 21; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); x = x^y; y = y^x; x = y^x; System.out.println(&quot;--------交换后--------&quot;); System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); &#125;&#125; 结果为：这里我们用到的位运算是异或运算。不明白的同学可以将两个数化成二进制一步一步算一下就能明白了。 好了，这就是java中不借助第三个变量来实现两个数的数值互换的两种基本方法，可能还有更高级的方法，就不一一列举了。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一般网站导航栏的写法]]></title>
+    <url>%2F2017%2F10%2F21%2F%E4%B8%80%E8%88%AC%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84%E5%86%99%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[今天我们用html+css实现一些网站导航栏效果 很多网站的导航页面都是具有鼠标放上就展开下拉内容这个功能 比如说下面这个网站： 1、我们首先用两个盒子来说明下原理12345678910111213141516171819202122232425262728&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; .box&#123; height: 30px; width: 60px; background-color: #ccc; &#125; .show&#123; display: none; height: 50px; width: 100px; background-color: #fcc; &#125; .box:hover .show&#123; display: block; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class=&quot;box&quot;&gt;盒子1 &lt;div class=&quot;show&quot;&gt;盒子2&lt;/div&gt; &lt;/div&gt;&lt;/body&gt;&lt;/html&gt; 原本只显示盒子1，当鼠标放上去后便会展开盒子2了。首先html部分很简单，就是两个盒子的嵌套然后看css部分：➀ 我们先将盒子2设置display:none将其隐藏➁123.box:hover .show&#123; display: block;&#125; 这一段的意思就是当鼠标放在.box类上是对.show类操作。前提是.show得是.box的子集，就是包含在.box中这里我们设置的是将.show类展开，即display:block。这样就实现了我们的核心功能。 2、接下来我们做上面示例图中的导航页面只要理解了原理，做出图例的样式其实很简单了代码如下： ① 首先是html代码123456789&lt;body&gt; &lt;a href=&quot;#&quot; class=&quot;head&quot;&gt;首页&lt;/a&gt; &lt;div class=&quot;box&quot;&gt;评价任务 ▾ &lt;div class=&quot;show&quot;&gt; &lt;li&gt;&lt;a href=&quot;#&quot;&gt;评价任务&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;topborder&quot;&gt;淘宝问大家&lt;/a&gt;&lt;/li&gt; &lt;/div&gt; &lt;/div&gt;&lt;/body&gt; 这是body部分代码，很简单。就是写了个a标记，然后一个div里面再嵌一个div实现。 ② CSS部分代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152&lt;style&gt; *&#123;margin: 0;padding: 0;&#125; body&#123; margin: 60px; &#125; .head, .box&#123; float: left; line-height: 50px; width: 200px; background-color: #4882F0; color:#fff; text-decoration: none; text-align: center; &#125; .box&#123; overflow: hidden; &#125; .show&#123; display: none; border: 1px dotted #ccc; &#125; .box:hover&#123; font-weight: bold; background-color: #3B6CCA; &#125; .head:hover&#123; font-weight: bold; background-color: #3B6CCA; &#125; .box:hover .show&#123; font-weight: normal; display: block; background-color: #fff; border-top:2px solid #F09628; &#125; .topborder&#123; border-top:1px dotted #ccc; &#125; li&#123; display: inline-block; &#125; .show a&#123; text-align:center; padding: 10px 50px; text-decoration: none; color:#000; &#125; .show a:hover&#123; color:#F09628; &#125;&lt;/style&gt; 结构很清晰，这样就能实现示例图的效果了。 总结其实我们只要理解前面的盒子嵌套模型，其他的就都是一样的原理，万变不离其宗。都是一个道理。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown文件的基本书写]]></title>
+    <url>%2F2017%2F10%2F01%2Fmd%E6%96%87%E4%BB%B6%E7%9A%84%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[1. 首先推荐一个在线编辑器 Cmd Markdown在线编辑器，可以实时预览到博客的样子点击Markdown进入开始编写。 2. Markdown的基本语法1、 标题的写法用#号表示标题，比如说“#一级标题”表示一级标题，相当于html中的h1。和html一样也是有6级标题的，分别用“#”，“##”，“###”，······ 以此类推表示标题。 1234# 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题 效果如下： 或者可以这样写 123# 这是一级标题 ### 这是二级标题 ##### 这是三级标题 ### 效果如下： 这样就相当于有了闭合标签一般来说选择第一种写法，比较方便快捷；注意#和标题内容之间有空格。 2、 列表 列表分为有序列表和无序列表。下面直接展示写法和效果 123456#### 无序列表* 1 * 1.1 * 1.1.1* 2* 3 效果如下： 可以看到如果代码缩进就会变成次级列表，出来*号可以用来表示列表以外，还可以使用+，-来表示无序列表。 12345#### 有序列表1. 有序列表1 1. 次级列表2. 有序列表2 3. 有序列表3 效果如下： 3、 区块引用 如果你想把某些内容放在一起或者是引用某某某的话时就可以使用引用了。使用也很简单就是在你要引用话之前加一个&gt;，注意是英文箭头，还有在&gt;和话之间是需要空格的 比如这样： 123456&gt; ### 这是引用&gt; * 不以结婚为目的的谈恋爱都是耍流氓&gt; &gt; 这是毛主席说的&gt; * 前方高能&gt; &gt; 注意：这里是为了提醒前面很刺激&gt; &gt; 的事情要发生 同样引用也是可以嵌套的比如这样： 12345&gt; 一级引用&gt;&gt; 二级引用&gt;&gt;&gt; 三级引用&gt;&gt;&gt;&gt; 四级引用&gt;&gt;&gt;&gt;&gt; 五级引用 效果如下：多级引用嵌套可以不要连在一起的，中间允许有空格，只要在一行就行 4、分割线 分割线可以由 *，-，_这3个符号最少3个，可连续也可不连续，最少3个就行 1234---___* * **** 效果如下： 不过一般情况我们选择 ——–这个符号，因为易写，直观明了。 5、 链接链接的写法有两种：行内式和参数式，不管是哪一种，链接文字都需要用[]来标记 12##### 行内式[行内式](https://www.baidu.com)链接的写法 效果图： 12345#### 参数式[name]:https://www.baidu.com[主页]:https://www.baidu.com这里是 [name]，这里是[主页] 效果图： 一般会这两种方法就差不多了 6、 图片图片的写法就和链接基本一样了。这里就直接给出写法，很容易理解的 12#### 图片的写法这里放图片![我是图片](http://i4.bvimg.com/524586/602c9d1be6eecc97s.png) 显示效果： 图片的写法和链接几乎一样只是前面多了一个!用来表示图片。 7、 代码框这个就很重要了，很多时候你都只是想吧自己的代码贴上去。这时候就要用到这个了。如果代码只有一行，那很简单，直接用`引起来就好了。如果代码是多行的话，就需要用```表示开始，同样用三个点表示结束，代码写在中间像这样 代码的写法： 显示效果： 8、 表格这个写起来有点麻烦，其实有点像你就是在用符号画表格。例如： 123456#### 表格| name | age | sex ||:----:|:---:|:---:|| Tom | 28 | 男 || Jany | 23 | 女 || Lucy | 26 | 女 | 效果图： 或者这样写： 12345#### 表格 姓名|语文|数学|英语 -|-|-|- Tom|80|70|84 Jane|90|88|92 效果图： 9、 强调强调就是加粗和倾斜还有删除线，有的时候用得着。 12345678#### 倾斜_倾斜_*倾斜*#### 加粗__加粗__**加粗**#### 删除线~~删除线~~ 效果图： 10、 转义字符其实就是有些符号代表了特殊意义导致无法输入，这时候就需要转义字符了。其实很简单，转义字符和js的转义字符是一样的，这里我就列几个常用的。 1234567#### 转义字符* \\* \`* \** \-* \+* \! 效果图： 编写md文件的基本语法差不多就这些了，也是从网上各处整理的。日后如果需要再进行补充。]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>md语法</tag>
+        <tag>md书写格式</tag>
+      </tags>
+  </entry>
 </search>
