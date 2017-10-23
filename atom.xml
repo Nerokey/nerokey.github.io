@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.nerokey.iofo/"/>
-  <updated>2017-10-23T04:55:52.684Z</updated>
+  <updated>2017-10-23T23:19:56.298Z</updated>
   <id>http://www.nerokey.iofo/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10+Ubuntu16.04双系统安装</title>
+    <link href="http://www.nerokey.iofo/2017/10/24/Win10-Ubuntu16-04%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    <id>http://www.nerokey.iofo/2017/10/24/Win10-Ubuntu16-04双系统安装/</id>
+    <published>2017-10-23T23:14:49.000Z</published>
+    <updated>2017-10-23T23:19:56.298Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天我们来看看uefi+gpt下Win10+Ubuntu16.04双系统如何安装。<br>我的安装条件：</p><ul><li>1.win10笔记本一台</li><li>2.U盘一个（大于4G）</li><li>3.Ubuntu16.04的iso镜像</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天我们来看看uefi+gpt下Win10+Ubuntu16.04双系统如何安装。&lt;br&gt;我的安装条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.win10笔记本一台&lt;/li&gt;
+&lt;li&gt;2.U盘一个（大于4G）&lt;/li&gt;
+&lt;li&gt;3.Ubuntu16.04的iso镜像&lt;/li&gt;
+&lt;/
+      
+    
+    </summary>
+    
+      <category term="Linux系统" scheme="http://www.nerokey.iofo/categories/Linux%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="Linux" scheme="http://www.nerokey.iofo/tags/Linux/"/>
+    
+      <category term="系统安装" scheme="http://www.nerokey.iofo/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript中的前端表单验证</title>
+    <link href="http://www.nerokey.iofo/2017/10/23/javascript%E4%B8%AD%E7%9A%84%E5%89%8D%E7%AB%AF%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
+    <id>http://www.nerokey.iofo/2017/10/23/javascript中的前端表单验证/</id>
+    <published>2017-10-23T13:58:34.000Z</published>
+    <updated>2017-10-23T23:06:51.548Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。"><a href="#在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。" class="headerlink" title="在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。"></a>在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。</h2><p><br><br><strong>大致有两种写法可以实现：</strong><br><a id="more"></a></p><blockquote><ul><li><p>1、在按钮的check事件中进行验证，验证通过后使用form.submit()发送验证</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;表单验证&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;form name=&quot;myform&quot; action=&quot;do.php&quot; method=&quot;POST&quot;&gt;</div><div class="line">&lt;label for=&quot;username&quot;&gt;</div><div class="line">&lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;/label&gt;</div><div class="line">&lt;label for=&quot;psword&quot;&gt;</div><div class="line">&lt;p&gt;密码：&lt;input type=&quot;password&quot; name=&quot;psword&quot; id=&quot;psword&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;/label&gt;</div><div class="line">&lt;input type=&quot;button&quot; value=&quot;登录&quot; onclick=&quot;check()&quot;&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function check()&#123;</div><div class="line">with(document.myform)&#123;</div><div class="line">if(username.value.length==0)&#123;    // if(username.value==&quot;&quot;)</div><div class="line">alert(&apos;用户名必须输入！&apos;);</div><div class="line">username.focus();</div><div class="line">&#125;</div><div class="line">else if(psword.value.length==0)&#123;</div><div class="line">alert(&apos;密码不能为空&apos;);</div><div class="line">psword.focus();</div><div class="line">&#125;</div><div class="line">else</div><div class="line">myform.submit();</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></li><li><p>2、在表单的onsubmit表单中进行验证</p></li></ul></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;表单验证&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;form name=&quot;myform&quot; action=&quot;do.php&quot; method=&quot;POST&quot; onsubmit=&quot;return checkdata()&quot;&gt;</div><div class="line">&lt;label for=&quot;username&quot;&gt;</div><div class="line">&lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;/label&gt;</div><div class="line">&lt;label for=&quot;password&quot;&gt;</div><div class="line">&lt;p&gt;密码：&lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;/label&gt;</div><div class="line">&lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;</div><div class="line">&lt;/form&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function checkdata()&#123;</div><div class="line">with(document.myform)&#123;</div><div class="line">if(username.value==&quot;&quot; || password.vlaue==&quot;&quot;)&#123;</div><div class="line">alert(&apos;用户名或密码不能为空！&apos;);</div><div class="line">return false;</div><div class="line">&#125;</div><div class="line">else&#123;</div><div class="line">return true;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure><p><strong>常用的其他验证：</strong></p><blockquote><p>1、必填字段验证：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//if(value==null||value==&quot;&quot;)</div><div class="line"> if(value.length==0)&#123;</div><div class="line">    alert(&apos;必须输入&apos;)；</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p></blockquote><p><br></p><blockquote><p>2、长度验证：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if(value.length&gt;50)&#123;</div><div class="line">    alert(&apos;不能超过50个字符&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></blockquote><p><br></p><blockquote><p>3、只能输入数字验证：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function  isNumber(String)&#123; </div><div class="line">    var  Letters  =  &quot;1234567890&quot;;  //可以自己增加可输入值</div><div class="line">    var  i;</div><div class="line">    var  c;</div><div class="line">    for(  i  =  0;  i  &lt;  String.length;  i++)&#123; </div><div class="line">        c  =  String.charAt(  i  );</div><div class="line">        if  (Letters.indexOf(  c  )  &lt;  0)</div><div class="line">        return  false;</div><div class="line">    &#125;</div><div class="line">    return  true;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></blockquote><p><br></p><blockquote><p>4、邮箱验证：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function isEmail(value)&#123;</div><div class="line">    apos=value.indexOf(&quot;@&quot;)</div><div class="line">    dotpos=value.lastIndexOf(&quot;.&quot;)</div><div class="line">    if (apos&lt;1||dotpos-apos&lt;2) &#123;</div><div class="line">        return false&#125;</div><div class="line">    else &#123;return true&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p></blockquote><hr><p>以上是前端各种验证的关键部分，具体扩充看具体需求了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。&quot;&gt;&lt;a href=&quot;#在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。&quot; class=&quot;headerlink&quot; title=&quot;在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。&quot;&gt;&lt;/a&gt;在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。&lt;/h2&gt;&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;大致有两种写法可以实现：&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://www.nerokey.iofo/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://www.nerokey.iofo/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://www.nerokey.iofo/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Java中不借助中间变量交换两数的值</title>

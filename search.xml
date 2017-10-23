@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Win10+Ubuntu16.04双系统安装]]></title>
+    <url>%2F2017%2F10%2F24%2FWin10-Ubuntu16-04%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[今天我们来看看uefi+gpt下Win10+Ubuntu16.04双系统如何安装。我的安装条件： 1.win10笔记本一台 2.U盘一个（大于4G） 3.Ubuntu16.04的iso镜像]]></content>
+      <categories>
+        <category>Linux系统</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>系统安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript中的前端表单验证]]></title>
+    <url>%2F2017%2F10%2F23%2Fjavascript%E4%B8%AD%E7%9A%84%E5%89%8D%E7%AB%AF%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[在Web中最常见的就是表单验证了，因为现在基本上各大网站都要求登入账号，这时候验证账号和密码的准确性就需要用到表单验证。当然通常情况下都会前端后端都需要进行验证，因为单一前端验证容易出现漏洞；而只进行后端验证则会加大对服务器的压力。所以就有了前端验证格式正确与否，而后端验证账号密码匹配与否。大致有两种写法可以实现： 1、在按钮的check事件中进行验证，验证通过后使用form.submit()发送验证 12345678910111213141516171819202122232425262728293031323334&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;表单验证&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;form name=&quot;myform&quot; action=&quot;do.php&quot; method=&quot;POST&quot;&gt; &lt;label for=&quot;username&quot;&gt; &lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;&gt;&lt;/p&gt; &lt;/label&gt; &lt;label for=&quot;psword&quot;&gt; &lt;p&gt;密码：&lt;input type=&quot;password&quot; name=&quot;psword&quot; id=&quot;psword&quot;&gt;&lt;/p&gt; &lt;/label&gt; &lt;input type=&quot;button&quot; value=&quot;登录&quot; onclick=&quot;check()&quot;&gt; &lt;/form&gt; &lt;script&gt; function check()&#123; with(document.myform)&#123; if(username.value.length==0)&#123; // if(username.value==&quot;&quot;) alert(&apos;用户名必须输入！&apos;); username.focus(); &#125; else if(psword.value.length==0)&#123; alert(&apos;密码不能为空&apos;); psword.focus(); &#125; else myform.submit(); &#125; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt; 2、在表单的onsubmit表单中进行验证 12345678910111213141516171819202122232425262728293031&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;title&gt;表单验证&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;form name=&quot;myform&quot; action=&quot;do.php&quot; method=&quot;POST&quot; onsubmit=&quot;return checkdata()&quot;&gt; &lt;label for=&quot;username&quot;&gt; &lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;&gt;&lt;/p&gt; &lt;/label&gt; &lt;label for=&quot;password&quot;&gt; &lt;p&gt;密码：&lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;&lt;/p&gt; &lt;/label&gt; &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt; &lt;/form&gt; &lt;script&gt; function checkdata()&#123; with(document.myform)&#123; if(username.value==&quot;&quot; || password.vlaue==&quot;&quot;)&#123; alert(&apos;用户名或密码不能为空！&apos;); return false; &#125; else&#123; return true; &#125; &#125; &#125; &lt;/script&gt;&lt;/body&gt;&lt;/html&gt; 常用的其他验证： 1、必填字段验证：1234//if(value==null||value==&quot;&quot;) if(value.length==0)&#123; alert(&apos;必须输入&apos;)； &#125; 2、长度验证：123if(value.length&gt;50)&#123; alert(&apos;不能超过50个字符&apos;);&#125; 3、只能输入数字验证：1234567891011function isNumber(String)&#123; var Letters = &quot;1234567890&quot;; //可以自己增加可输入值 var i; var c; for( i = 0; i &lt; String.length; i++)&#123; c = String.charAt( i ); if (Letters.indexOf( c ) &lt; 0) return false; &#125; return true;&#125; 4、邮箱验证：1234567function isEmail(value)&#123; apos=value.indexOf(&quot;@&quot;) dotpos=value.lastIndexOf(&quot;.&quot;) if (apos&lt;1||dotpos-apos&lt;2) &#123; return false&#125; else &#123;return true&#125;&#125; 以上是前端各种验证的关键部分，具体扩充看具体需求了。]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java中不借助中间变量交换两数的值]]></title>
     <url>%2F2017%2F10%2F22%2FJava%E4%B8%AD%E4%B8%8D%E5%80%9F%E5%8A%A9%E4%B8%AD%E9%97%B4%E5%8F%98%E9%87%8F%E4%BA%A4%E6%8D%A2%E4%B8%A4%E6%95%B0%E7%9A%84%E5%80%BC%2F</url>
     <content type="text"><![CDATA[交换数值我们一般借助一个中间变量，这样会变得简单明了。然而在面试的时候很多面试官就喜欢这样来问你，这时候如果你回答出来了就能显得你稍稍厉害一些。 今天我们就来看看Java中是如何不借助第三个变量来交换数值的再此之前我们先看下借助第三个变量来交换法1234567891011121314public class Exchange1 &#123; public static void main(String[] args) &#123; int x = 10; int y = 18; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); System.out.println(&quot;---------交换后------------&quot;); int temp; temp = x; x = y; y = temp; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); &#125;&#125; 结果为：方法有两种：其一是通过数学方法，对这两个数进行某些数学运算；其二是通过位运算。 １．数学运算法 123456789101112public class Exchange2 &#123; public static void main(String[] args) &#123; int x = 7; int y = 4; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); x = x+y; //x=11 y = x-y; //y=7 x = x-y; //x=4 System.out.println(&quot;--------交换后--------&quot;); System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); &#125;&#125; 结果为： 2．位运算法 123456789101112public class Exchange3 &#123; public static void main(String[] args) &#123; int x = 16; int y = 21; System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); x = x^y; y = y^x; x = y^x; System.out.println(&quot;--------交换后--------&quot;); System.out.println(&quot;x=&quot;+x+&quot;,y=&quot;+y); &#125;&#125; 结果为：这里我们用到的位运算是异或运算。不明白的同学可以将两个数化成二进制一步一步算一下就能明白了。 好了，这就是java中不借助第三个变量来实现两个数的数值互换的两种基本方法，可能还有更高级的方法，就不一一列举了。]]></content>
