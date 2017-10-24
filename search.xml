@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Win10+Ubuntu16.04双系统安装]]></title>
     <url>%2F2017%2F10%2F24%2FWin10-Ubuntu16-04%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[1、今天我们来看看uefi+gpt下Win10+Ubuntu16.04双系统如何安装。首先附上我的引导界面我的安装条件： 1. win10笔记本一台 * SSD+机械盘 2. U盘一个（大于4G） 3. Ubuntu16.04的iso镜像 个人是有2块硬盘的，其中SSD安装的是win10；使用了机械的80G用于安装Ubuntu，剩下的用来做数据盘。引导也是放在固态盘中的，这样启动会快上一些。当然，如果你只有一块硬盘应该也是一样的。2、0然后是安装过程：]]></content>
+    <content type="text"><![CDATA[1、今天我们来看看uefi+gpt下Win10+Ubuntu16.04双系统如何安装。首先附上我的引导界面我的安装条件： 1. win10笔记本一台 SSD+机械盘 2. U盘一个（大于4G） 3. Ubuntu16.04的iso镜像 个人是有2块硬盘的，其中SSD安装的是win10；使用了机械的80G用于安装Ubuntu，剩下的用来做数据盘。引导也是放在固态盘中的，这样启动会快上一些。当然，如果你只有一块硬盘应该也是一样的。2、然后是安装过程：]]></content>
       <categories>
         <category>Linux系统</category>
       </categories>
