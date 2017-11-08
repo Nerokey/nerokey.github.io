@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java中的集合之List]]></title>
+    <url>%2F2017%2F11%2F08%2FJava%E4%B8%AD%E7%9A%84%E9%9B%86%E5%90%88%E4%B9%8BList%2F</url>
+    <content type="text"><![CDATA[java中list是一个接口，已实现的类有ArrayList、LinkedList等。 List的特点：1 . List：序列2 . 有序的，可重复3 . ArrayList： 3.1 顺序结构3.2 容量动态扩充3.3 线程不安全（不同步） 4 . LinkedList：离散 4.1 离散结构4.2 容量动态扩充4.3 线程不安全（不同步） ArrayListArrayList就相当于一个容器，任何元素都能往里面丢。我们使用add方法向里面添加元素。 下面给出了ArrayList的一些常用方法：1、添加元素：我们使用add方法向里面添加元素，像这样：12345678910List ls = new ArrayList(); //创建一个list对象ls.add(&quot;abcd&quot;);ls.add(111);ls.add(3.1415);ls.add(null);ls.add(false);ls.add(&quot;abcd&quot;);ls.add(new Person(&quot;abc&quot;, 20));ls.add(new Person(&quot;123bc&quot;, 18)); 可以看出这个容器中不仅能放int类型，double类型，boolean类型，甚至是null值也能存放、对象也能放进去。相同的元素也能放进去。2、容器中的元素输出：12345//使用迭代器输出Iterator iter = ls.iterator();while(iter.hasNext())&#123; System.out.println(iter.next());&#125; 注意： ArrayList无法使用for循环输出，需要使用迭代器while循环输出，hasNext()判断是否有下一个元素，next()输出元素对象。3、其他一些方法：1234567891011121314//get方法，获取index下标的对象System.out.println(ls.get(4));//size方法，获取当前ArrayList容器里面元素的个数int size = ls.size();//indexOf，获取容器中某个对象的下标索引System.out.println(ls.indexOf(111));//remove，移除指定下标的元素值ls.remove(5);//clear，清空整个容器ls.clear(); 此外ArrayList中还包括clone()啊之类的一些其他方法，就不一一列举了。。 LinkedList他的底层是通过链表实现的，所以他不仅具有ArrayList的方法，还具有队列和栈的一些操作。这里我们就举一些和ArrayList不同的例子1、添加元素和ArrayList是一样的使用add()方法1234567891011LinkedList list = new LinkedList(); list.add(&quot;abcd&quot;);list.add(111);list.add(3.1415);list.add(null);list.add(true);list.add(3.1415);list.add(&quot;abcd&quot;);list.add(new Person(&quot;abc&quot;, 20));list.add(new Person(&quot;123bc&quot;, 18)); 这里也是允许添加相同的元素。2、遍历方法：和ArrayList一样使用Iterator迭代器来遍历3、其他一些常用方法：(与ArrayList不同的方法)1234567891011121314151617181920//从此列表所表示的堆栈处弹出一个元素。list.pop(); //在列表尾部添加一个元素list.addLast(&quot;ABC&quot;); //在列表头部添加一个元素list.addFirst(&quot;China&quot;); //获取列表最后一个元素list.getLast(); //获取列表第一个元素list.getFirst(); //获取但不移除此列表的头（第一个元素）。list.peek(); //将元素推入此列表所表示的堆栈。list.push(100); 注意： pop()和peek()还有getFirst()都能获取列表的第一个元素，但是pop()是会将元素删除，其他两个方法都不会将其删除。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>集合</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Win10+Ubuntu16.04双系统安装]]></title>
     <url>%2F2017%2F10%2F24%2FWin10-Ubuntu16-04%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[1、今天我们来看看uefi+gpt下Win10+Ubuntu16.04双系统如何安装。首先附上我的引导界面我的安装条件： 1. win10笔记本一台 SSD+机械盘 2. U盘一个（大于4G） 3. Ubuntu16.04的iso镜像 个人是有2块硬盘的，其中SSD安装的是win10；使用了机械的80G用于安装Ubuntu，剩下的用来做数据盘。引导也是放在固态盘中的，这样启动会快上一些。当然，如果你只有一块硬盘应该也是一样的。2、然后是安装过程：]]></content>
