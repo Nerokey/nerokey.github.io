@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="java中list是一个接口，已实现的类有ArrayList、LinkedList等。  List的特点：1 . List：序列2 . 有序的，可重复3 . ArrayList：4 . LinkedList：离散">
+<meta name="description" content="java中list是一个接口，已实现的类有ArrayList、LinkedList等。  List的特点：1 . List：序列2 . 有序的，可重复3 . ArrayList：顺序4 . LinkedList：离散">
 <meta name="keywords" content="java,集合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中的集合之List">
 <meta property="og:url" content="http://www.nerokey.iofo/2017/11/08/Java中的集合之List/index.html">
 <meta property="og:site_name" content="Nerokey&#39;s Blog">
-<meta property="og:description" content="java中list是一个接口，已实现的类有ArrayList、LinkedList等。  List的特点：1 . List：序列2 . 有序的，可重复3 . ArrayList：4 . LinkedList：离散">
+<meta property="og:description" content="java中list是一个接口，已实现的类有ArrayList、LinkedList等。  List的特点：1 . List：序列2 . 有序的，可重复3 . ArrayList：顺序4 . LinkedList：离散">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-08T14:38:27.622Z">
+<meta property="og:updated_time" content="2017-11-11T07:17:46.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的集合之List">
-<meta name="twitter:description" content="java中list是一个接口，已实现的类有ArrayList、LinkedList等。  List的特点：1 . List：序列2 . 有序的，可重复3 . ArrayList：4 . LinkedList：离散">
+<meta name="twitter:description" content="java中list是一个接口，已实现的类有ArrayList、LinkedList等。  List的特点：1 . List：序列2 . 有序的，可重复3 . ArrayList：顺序4 . LinkedList：离散">
 
 
 
@@ -400,17 +400,17 @@
       
         <p>java中<strong>list</strong>是一个接口，已实现的类有ArrayList、LinkedList等。</p>
 <blockquote>
-<p><strong>List的特点：</strong><br>1 . List：序列<br>2 . 有序的，可重复<br>3 . ArrayList：<br>4 . LinkedList：离散</p>
+<p><strong>List的特点：</strong><br>1 . List：序列<br>2 . 有序的，可重复<br>3 . ArrayList：顺序<br>4 . LinkedList：离散</p>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a><strong>ArrayList</strong></h3><p>ArrayList就相当于一个容器，任何元素都能往里面丢。我们使用add方法向里面添加元素。<br>他的特点就是：<br>1 . 离散结构<br>2 . 容量动态扩充<br>3 . 线程不安全（不同步）</p>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a><strong>ArrayList</strong></h3><p>ArrayList就相当于一个容器，任何元素都能往里面丢。<br>他的特点就是：<br>1 . 顺序结构<br>2 . 容量动态扩充<br>3 . 线程不安全（不同步）</p>
 <p>下面给出了ArrayList的一些常用方法：<br>1、添加元素：我们使用add方法向里面添加元素，像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ArrayList ls = new ArrayList();  //创建一个list对象</div><div class="line"></div><div class="line">ls.add(&quot;abcd&quot;);</div><div class="line">ls.add(111);</div><div class="line">ls.add(3.1415);</div><div class="line">ls.add(null);</div><div class="line">ls.add(false);</div><div class="line">ls.add(&quot;abcd&quot;);</div><div class="line">ls.add(new Person(&quot;abc&quot;, 20));</div><div class="line">ls.add(new Person(&quot;123bc&quot;, 18));</div></pre></td></tr></table></figure></p>
-<p>可以看出这个容器中不仅能放int类型，double类型，boolean类型，甚至是null值也能存放、对象也能放进去。相同的元素也能放进去。<br>2、容器中的元素输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//使用迭代器输出</div><div class="line">Iterator iter = ls.iterator();</div><div class="line">while(iter.hasNext())&#123;</div><div class="line">    System.out.println(iter.next());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可以看出这个容器中不仅能放int类型，double类型，boolean类型等基本数据类型，甚至是null值也能存放、对象也能放进去，并且允许存放相同元素。<br>2、容器中的元素输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//使用迭代器输出</div><div class="line">Iterator iter = ls.iterator();</div><div class="line">while(iter.hasNext())&#123;</div><div class="line">    System.out.println(iter.next());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong><em>注意：</em></strong> ArrayList无法使用for循环输出，需要使用迭代器while循环输出，hasNext()判断是否有下一个元素，next()输出元素对象。<br>3、其他一些方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//get方法，获取index下标的对象</div><div class="line">System.out.println(ls.get(4));</div><div class="line"></div><div class="line">//size方法，获取当前ArrayList容器里面元素的个数</div><div class="line">int size = ls.size();</div><div class="line"></div><div class="line">//indexOf，获取容器中某个对象的下标索引</div><div class="line">System.out.println(ls.indexOf(111));</div><div class="line"></div><div class="line">//remove，移除指定下标的元素值</div><div class="line">ls.remove(5);</div><div class="line"></div><div class="line">//clear，清空整个容器</div><div class="line">ls.clear();</div></pre></td></tr></table></figure></p>
 <p>此外ArrayList中还包括clone()啊之类的一些其他方法，就不一一列举了。。</p>
 <hr>
-<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a><strong>LinkedList</strong></h3><p>他的底层是通过链表实现的，所以他不仅具有ArrayList的方法，还具有队列和栈的一些操作。<br>其特点为：<br>1 . 顺序结构<br>2 . 容量动态扩充<br>3 . 线程不安全（不同步）</p>
+<h3 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a><strong>LinkedList</strong></h3><p>他的底层是通过链表实现的，所以他不仅具有ArrayList的方法，还具有队列和栈的一些操作。<br>其特点为：<br>1 . 离散结构<br>2 . 容量动态扩充<br>3 . 线程不安全（不同步）</p>
 <p>这里我们就举一些和ArrayList不同的例子<br>1、添加元素和ArrayList是一样的使用add()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">LinkedList list = new LinkedList();</div><div class="line">		</div><div class="line">list.add(&quot;abcd&quot;);</div><div class="line">list.add(111);</div><div class="line">list.add(3.1415);</div><div class="line">list.add(null);</div><div class="line">list.add(true);</div><div class="line">list.add(3.1415);</div><div class="line">list.add(&quot;abcd&quot;);</div><div class="line">list.add(new Person(&quot;abc&quot;, 20));</div><div class="line">list.add(new Person(&quot;123bc&quot;, 18));</div></pre></td></tr></table></figure></p>
 <p>这里也是允许添加相同的元素。<br>2、遍历方法：和ArrayList一样使用Iterator迭代器来遍历<br>3、其他一些常用方法：(与ArrayList不同的方法)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//从此列表所表示的堆栈处弹出一个元素。</div><div class="line">list.pop();</div><div class="line">		</div><div class="line">//在列表尾部添加一个元素</div><div class="line">list.addLast(&quot;ABC&quot;);</div><div class="line">		</div><div class="line">//在列表头部添加一个元素</div><div class="line">list.addFirst(&quot;China&quot;);</div><div class="line">		</div><div class="line">//获取列表最后一个元素</div><div class="line">list.getLast();</div><div class="line">		</div><div class="line">//获取列表第一个元素</div><div class="line">list.getFirst();</div><div class="line">		</div><div class="line">//获取但不移除此列表的头（第一个元素）。</div><div class="line">list.peek();</div><div class="line">		</div><div class="line">//将元素推入此列表所表示的堆栈。</div><div class="line">list.push(100);</div></pre></td></tr></table></figure></p>
 <p><strong><em>注意：</em></strong> pop()和peek()还有getFirst()都能获取列表的第一个元素，但是pop()是会将元素删除，其他两个方法都不会将其删除。</p>
@@ -561,7 +561,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
