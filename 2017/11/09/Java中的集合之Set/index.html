@@ -89,10 +89,12 @@
 <meta property="og:site_name" content="Nerokey&#39;s Blog">
 <meta property="og:description" content="什么是Setset也是java集合框架中的一种，一样是一种容器，用来存放对象等等，但是他不会记住对象的存储顺序，也不允许同一个set集合中出现相同的元素(这是和list不同的地方)。已实现的类有HashSet、LinkedHashSet、TreeSet等等。 1. HashSetHashSet按照Hash算法存储集合中的元素，具有很好的存取和查找性能。当向HashSet中添加一些元素时，HashS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-11T07:51:25.848Z">
+<meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/20171111162233.png">
+<meta property="og:updated_time" content="2017-11-11T08:33:08.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的集合之Set">
 <meta name="twitter:description" content="什么是Setset也是java集合框架中的一种，一样是一种容器，用来存放对象等等，但是他不会记住对象的存储顺序，也不允许同一个set集合中出现相同的元素(这是和list不同的地方)。已实现的类有HashSet、LinkedHashSet、TreeSet等等。 1. HashSetHashSet按照Hash算法存储集合中的元素，具有很好的存取和查找性能。当向HashSet中添加一些元素时，HashS">
+<meta name="twitter:image" content="http://oxua0flmy.bkt.clouddn.com/20171111162233.png">
 
 
 
@@ -409,8 +411,20 @@
 <p>2、遍历输出：使用Iterator迭代器遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Iterator iter = hs.iterator();</div><div class="line">while(iter.hasNext())&#123;</div><div class="line">	System.out.println(iter.next());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>3、其他一些方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//清空集合内元素		</div><div class="line">hs.clear();</div><div class="line"></div><div class="line">//克隆一个HashSet		</div><div class="line">HashSet hash = (HashSet) hs.clone();</div><div class="line"></div><div class="line">//获取HashSet额长度</div><div class="line">int i = hs.size();</div><div class="line"></div><div class="line">//移除集合中的某个元素，返回布尔类型，表示是否成功</div><div class="line">boolean flag = hs.remove(1234);</div></pre></td></tr></table></figure></p>
 <p><strong><em>注意：</em></strong> 如果向HashSet中添加一个可变对象后，后面的对象修改了该可变对象的实例变量，则可能导致它与集合中的其他元素相同。</p>
-<h3 id="2-LinkedHashSet"><a href="#2-LinkedHashSet" class="headerlink" title="2. LinkedHashSet"></a>2. LinkedHashSet</h3><p>LikedHashSet是HashSet的子类，它也是根据元素的HashCode值进来决定元素的存储位置，但它能够同时使用链表来维护元素的添加次序，使得元素能以插入顺序保存。</p>
-<h3 id="3-TreeSet"><a href="#3-TreeSet" class="headerlink" title="3. TreeSet"></a>3. TreeSet</h3>
+<h3 id="2-LinkedHashSet"><a href="#2-LinkedHashSet" class="headerlink" title="2. LinkedHashSet"></a>2. LinkedHashSet</h3><p>LikedHashSet是HashSet的子类，它也是根据元素的HashCode值进来决定元素的存储位置，但它能够同时使用链表来维护元素的添加次序，使得元素能以插入顺序保存。<br>其大部分方法使用和HsahSet几乎一样。由于他添加元素是有顺序的，使得其性能会比HashSet要好，但是在插入元素时就要不如HashSet了。</p>
+<h3 id="3-TreeSet"><a href="#3-TreeSet" class="headerlink" title="3. TreeSet"></a>3. TreeSet</h3><p>TreeSet是SortedSet接口的实现类，TreeSet可以保证了集合元素处于排序状态（所谓排序状态，就是元素按照一定的规则排序，比如升序排列，降序排列）。<br><strong>与HashSet集合相比：</strong><br>1、Comparator comparator():如果TreeSet采用了定制排序，则该方法返回定制排序所使用的Comparator，如果采用了自然排序，则返回null。</p>
+<p>2、Object first(): 返回集合中的第一个元素。</p>
+<p>3、Object last():返回集合中的最后一个元素。</p>
+<p>4、Object lower(Object e)：返回集合中位于指定元素e之前的元素（即小于指定元素的最大元素，参考元素e不必是集合中的元素）。</p>
+<p>5、Object  higher(Object e):返回集合中位于指定元素e之后的元素（即大于指定元素的最小元素，参考元素e不必是集合中的元素）。</p>
+<p>6、SortedSet subSet(Object fromElement, Object toElement): 返回集合中所有在fromElemt和toElement之间的元素（包含fromElent本身，不包含toElement本身）。</p>
+<p>7、SortedSet headSet(Object toElement): 返回此set的子集，由小于toElement的元素组成。</p>
+<p>8、SortedSet tailSet(Object fromElement):返回此set的子集，由大于或等于fromElement的元素组成。</p>
+<p><strong>比如我们添加一些元素：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">TreeSet ts = new TreeSet();</div><div class="line"></div><div class="line">ts.add(10);</div><div class="line">ts.add(-8);</div><div class="line">ts.add(18);</div><div class="line">ts.add(10);   //没有报错，但是输出只有一个</div><div class="line">ts.add(26);</div><div class="line">//ts.add(3.14);   //允许添加其他类型的元素</div><div class="line">//ts.add(&quot;abc&quot;);  //报错，原因同上</div></pre></td></tr></table></figure></p>
+<p>运行结果为：<br><img src="http://oxua0flmy.bkt.clouddn.com/20171111162233.png" alt="效果图"><br>只输出了一个10，并且输出结果是从小到大排序的。</p>
+<p><strong>TreeSet支持两种排序方法：</strong>自然排序和定制排序。在默认的情况下，TreeSet采用自然排序。<br>1、自然排序：TreeSet会调用集合元素的compareTo(Objectobj)方法来比较元素之间的大小关系，然后让集合按照升序排列，这种方式叫做自然排序。<br>2、定制排序：定制排序是按照使用者的要求，需要自己设计的一种排序。如果需要定制排序，比如需要数据按照降序排列，则可以通过Comparator接口的帮助。<br><strong>TreeSet的一些其他方法：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//返回此 set 中当前最后一个（最高）元素。</div><div class="line">ts.last();</div><div class="line"></div><div class="line">//返回此 set 中当前第一个（最低）元素。</div><div class="line">ts.first();</div><div class="line"></div><div class="line">//返回此 set 中大于等于给定元素的最小元素；如果不存在这样的元素，则返回 null。</div><div class="line">ts.ceiling(e);</div><div class="line"></div><div class="line">//返回此 set 中小于等于给定元素的最大元素；如果不存在这样的元素，则返回 null。</div><div class="line">ts.floor(e);</div><div class="line"></div><div class="line">//返回 set 中的元素数（set 的容量）。</div><div class="line">ts.size();</div></pre></td></tr></table></figure></p>
+<p><strong>PS:</strong><br>1、如果希望TreeSet能够正常运行，TreeSet只能添加同一种类型的对象。<br>2、TreeSet集合中判断元素相等的唯一标准是：两个对象通过comparator（Objectobj）方法比较后，返回0；否则认为不相等。</p>
+
       
     </div>
     
