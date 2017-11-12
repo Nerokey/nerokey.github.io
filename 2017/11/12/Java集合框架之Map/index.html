@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/20171112094050.png">
 <meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/20171112100137.png">
-<meta property="og:updated_time" content="2017-11-12T02:15:12.549Z">
+<meta property="og:updated_time" content="2017-11-12T02:20:04.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java集合框架之Map">
 <meta name="twitter:description" content="什么是MapMap与list以及set一样是位于java.util包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：一个映射不能包含重复的键；每个键最多只能映射到一个值。其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别 1. HashMap他是基于哈希表的实现，不能保证映射顺序相同。他也">
@@ -401,7 +401,7 @@
       
 
       
-        <h2 id="什么是Map"><a href="#什么是Map" class="headerlink" title="什么是Map"></a>什么是Map</h2><p><strong>Map</strong>与list以及set一样是位于<strong>java.util</strong>包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：<strong>一个映射不能包含重复的键；每个键最多只能映射到一个值。</strong><br>其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别</p>
+        <h2 id="什么是Map"><a href="#什么是Map" class="headerlink" title="什么是Map"></a>什么是Map</h2><p><strong>Map</strong>与list以及set一样是位于<code>java.util</code>包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：<strong>一个映射不能包含重复的键；每个键最多只能映射到一个值。</strong><br>其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别</p>
 <h3 id="1-HashMap"><a href="#1-HashMap" class="headerlink" title="1. HashMap"></a>1. HashMap</h3><p>他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。</p>
 <a id="more"></a>
 <p>1)、创建map对象以及添加键值对：使用put()方法添加键值对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import java.util.HashMap;</div><div class="line"></div><div class="line">//使用了泛型，规定key必须为String类型，值必须为double类型</div><div class="line">HashMap&lt;String, Double&gt; map = new HashMap&lt;String, Double&gt;();</div><div class="line">		</div><div class="line">map.put(&quot;语文&quot;, 84.0);</div><div class="line">map.put(&quot;数学&quot;, 91.0);</div><div class="line">map.put(null, null);   //允许添加的键和都为null</div><div class="line">map.put(&quot;英语&quot;, 72.5);</div></pre></td></tr></table></figure></p>
