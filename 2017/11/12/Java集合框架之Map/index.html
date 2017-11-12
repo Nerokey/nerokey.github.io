@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="什么是MapMap与list以及set一样是位于1234567其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别&amp;lt;!--more--&amp;gt;### 1. HashMap他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。1)、创建map对象以及添加键值对：使">
+<meta name="description" content="什么是MapMap与list以及set一样是位于 包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：**一个映射不能包含重复的键；每个键最多只能映射到一个值。**1234567其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别&amp;lt;!--more--&amp;gt;### 1. HashMap他">
 <meta name="keywords" content="java,集合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java集合框架之Map">
 <meta property="og:url" content="http://www.nerokey.iofo/2017/11/12/Java集合框架之Map/index.html">
 <meta property="og:site_name" content="Nerokey&#39;s Blog">
-<meta property="og:description" content="什么是MapMap与list以及set一样是位于1234567其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别&amp;lt;!--more--&amp;gt;### 1. HashMap他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。1)、创建map对象以及添加键值对：使">
+<meta property="og:description" content="什么是MapMap与list以及set一样是位于 包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：**一个映射不能包含重复的键；每个键最多只能映射到一个值。**1234567其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别&amp;lt;!--more--&amp;gt;### 1. HashMap他">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-12T02:06:34.264Z">
+<meta property="og:updated_time" content="2017-11-12T02:09:54.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java集合框架之Map">
-<meta name="twitter:description" content="什么是MapMap与list以及set一样是位于1234567其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别&amp;lt;!--more--&amp;gt;### 1. HashMap他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。1)、创建map对象以及添加键值对：使">
+<meta name="twitter:description" content="什么是MapMap与list以及set一样是位于 包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：**一个映射不能包含重复的键；每个键最多只能映射到一个值。**1234567其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别&amp;lt;!--more--&amp;gt;### 1. HashMap他">
 
 
 
@@ -398,7 +398,7 @@
       
 
       
-        <h2 id="什么是Map"><a href="#什么是Map" class="headerlink" title="什么是Map"></a>什么是Map</h2><p><strong>Map</strong>与list以及set一样是位于<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别</div><div class="line"></div><div class="line">&lt;!--more--&gt;</div><div class="line"></div><div class="line">### 1. HashMap</div><div class="line">他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。</div><div class="line">1)、创建map对象以及添加键值对：使用put()方法添加键值对</div></pre></td></tr></table></figure></p>
+        <h2 id="什么是Map"><a href="#什么是Map" class="headerlink" title="什么是Map"></a>什么是Map</h2><p><strong>Map</strong>与list以及set一样是位于 <figure class="highlight plain"><figcaption><span>包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：**一个映射不能包含重复的键；每个键最多只能映射到一个值。**</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别</div><div class="line"></div><div class="line">&lt;!--more--&gt;</div><div class="line"></div><div class="line">### 1. HashMap</div><div class="line">他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。</div><div class="line">1)、创建map对象以及添加键值对：使用put()方法添加键值对</div></pre></td></tr></table></figure></p>
 <p>import java.util.HashMap;</p>
 <p>//使用了泛型，规定key必须为String类型，值必须为double类型<br>HashMap<string, double=""> map = new HashMap<string, double="">();</string,></string,></p>
 <p>map.put(“语文”, 84.0);<br>map.put(“数学”, 91.0);<br>map.put(null, null);   //允许添加的键和都为null<br>map.put(“英语”, 72.5);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2)、遍历输出：有两种方式</div></pre></td></tr></table></figure></p>
