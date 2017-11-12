@@ -81,19 +81,20 @@
 
 
 
-<meta name="description" content="什么是MapMap与list以及set一样是位于java.util包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：一个映射不能包含重复的键；每个键最多只能映射到一个值。其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别">
+<meta name="description" content="什么是MapMap与list以及set一样是位于java.util包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：一个映射不能包含重复的键；每个键最多只能映射到一个值。其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别 1. HashMap他是基于哈希表的实现，不能保证映射顺序相同。他也">
 <meta name="keywords" content="java,集合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java集合框架之Map">
 <meta property="og:url" content="http://www.nerokey.iofo/2017/11/12/Java集合框架之Map/index.html">
 <meta property="og:site_name" content="Nerokey&#39;s Blog">
-<meta property="og:description" content="什么是MapMap与list以及set一样是位于java.util包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：一个映射不能包含重复的键；每个键最多只能映射到一个值。其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别">
+<meta property="og:description" content="什么是MapMap与list以及set一样是位于java.util包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：一个映射不能包含重复的键；每个键最多只能映射到一个值。其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别 1. HashMap他是基于哈希表的实现，不能保证映射顺序相同。他也">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/20171112094050.png">
-<meta property="og:updated_time" content="2017-11-12T02:11:58.889Z">
+<meta property="og:image" content="http://oxua0flmy.bkt.clouddn.com/20171112100137.png">
+<meta property="og:updated_time" content="2017-11-12T02:15:12.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java集合框架之Map">
-<meta name="twitter:description" content="什么是MapMap与list以及set一样是位于java.util包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：一个映射不能包含重复的键；每个键最多只能映射到一个值。其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别">
+<meta name="twitter:description" content="什么是MapMap与list以及set一样是位于java.util包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：一个映射不能包含重复的键；每个键最多只能映射到一个值。其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别 1. HashMap他是基于哈希表的实现，不能保证映射顺序相同。他也">
 <meta name="twitter:image" content="http://oxua0flmy.bkt.clouddn.com/20171112094050.png">
 
 
@@ -401,13 +402,41 @@
 
       
         <h2 id="什么是Map"><a href="#什么是Map" class="headerlink" title="什么是Map"></a>什么是Map</h2><p><strong>Map</strong>与list以及set一样是位于<strong>java.util</strong>包下定义的一个接口。map是键值对的存在，将键值映射到对象中，其规定：<strong>一个映射不能包含重复的键；每个键最多只能映射到一个值。</strong><br>其实现的子类有HashMap、Hashtable、LinkedHashMap以及TreeMap等等，下面我们就来看看这四种实现类的用法和区别</p>
+<h3 id="1-HashMap"><a href="#1-HashMap" class="headerlink" title="1. HashMap"></a>1. HashMap</h3><p>他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。</p>
 <a id="more"></a>
-<h3 id="1-HashMap"><a href="#1-HashMap" class="headerlink" title="1. HashMap"></a>1. HashMap</h3><p>他是基于哈希表的实现，不能保证映射顺序相同。他也是线程不同步的，所以必须添加外部代码使得线程同步。<br>1)、创建map对象以及添加键值对：使用put()方法添加键值对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import java.util.HashMap;</div><div class="line"></div><div class="line">//使用了泛型，规定key必须为String类型，值必须为double类型</div><div class="line">HashMap&lt;String, Double&gt; map = new HashMap&lt;String, Double&gt;();</div><div class="line">		</div><div class="line">map.put(&quot;语文&quot;, 84.0);</div><div class="line">map.put(&quot;数学&quot;, 91.0);</div><div class="line">map.put(null, null);   //允许添加的键和都为null</div><div class="line">map.put(&quot;英语&quot;, 72.5);</div></pre></td></tr></table></figure></p>
+<p>1)、创建map对象以及添加键值对：使用put()方法添加键值对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import java.util.HashMap;</div><div class="line"></div><div class="line">//使用了泛型，规定key必须为String类型，值必须为double类型</div><div class="line">HashMap&lt;String, Double&gt; map = new HashMap&lt;String, Double&gt;();</div><div class="line">		</div><div class="line">map.put(&quot;语文&quot;, 84.0);</div><div class="line">map.put(&quot;数学&quot;, 91.0);</div><div class="line">map.put(null, null);   //允许添加的键和都为null</div><div class="line">map.put(&quot;英语&quot;, 72.5);</div></pre></td></tr></table></figure></p>
 <p>2)、遍历输出：有两种方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//使用Iterator迭代器遍历HashMap</div><div class="line">Iterator iter  = map.keySet().iterator();</div><div class="line">while(iter.hasNext())&#123;</div><div class="line">	//System.out.print(iter.next());    //这样只能访问到key值，而不能访问key对应的value</div><div class="line">	String key = (String) iter.next();</div><div class="line">	System.out.println(key+&quot;:&quot;+map.get(key)); //使用HashMap中的get()方法访问key对应的值</div><div class="line">&#125;</div><div class="line">		</div><div class="line">System.out.println(&quot;-------------------&quot;);</div><div class="line"></div><div class="line">//使用enterSet()方法的foreach循环遍历打印</div><div class="line">Set&lt;Entry&lt;String, Double&gt;&gt; sets = map.entrySet();  </div><div class="line">for(Entry&lt;String, Double&gt; entry : sets) &#123;  </div><div class="line">    System.out.println(entry.getKey() + &quot;：&quot;+entry.getValue());   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>运行结果：可以看到两者的效果是一样的，发现遍历输出的顺序与添加顺序是不一样的。所以他是无序的<br><img src="http://oxua0flmy.bkt.clouddn.com/20171112094050.png" alt="结果"></p>
-<h3 id="2-LinkedHashMap"><a href="#2-LinkedHashMap" class="headerlink" title="2. LinkedHashMap"></a>2. LinkedHashMap</h3><p>他是HashMap的直接子类，但是他是链表实现。LinkedHashMap可以认为是HashMap+LinkedList，即它既使用HashMap操作数据结构，又使用LinkedList维护插入元素的先后顺序。<br>LinkedHashMap虽然增加了时间和空间上的开销，但是<strong>通过维护一个运行于所有条目的双向链表，LinkedHashMap保证了元素迭代的顺序。该迭代顺序可以是插入顺序或者是访问顺序。</strong><br><em>它具有如下特点：</em><br>| 项目 | 结论 |<br>|:–:|:–:|<br>|LinkedHashMap是否允许null值|Key和Value都允许为null|<br>|LinkedHashMap是否允许重复数据|Key重复会覆盖、Value允许重复|<br>|LinkedHashMap是否有序|<strong>有序</strong>|<br>|LinkedHashMap是否线程安全|非线程安全|<br>1)、创建对象及添加数据：使用put()添加数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import java.util.LinkedHashMap;</div><div class="line"></div><div class="line">LinkedHashMap&lt;String, String&gt; map = new LinkedHashMap&lt;String, String&gt;();</div><div class="line">		</div><div class="line">map.put(&quot;西游记&quot;, &quot;吴承恩&quot;);</div><div class="line">map.put(&quot;三国演义&quot;, &quot;罗贯中&quot;);</div><div class="line">map.put(&quot;红楼梦&quot;, &quot;曹雪芹&quot;);</div><div class="line">map.put(null, null);  //允许添加null值</div><div class="line">map.put(&quot;水浒传&quot;, &quot;施耐庵&quot;);</div></pre></td></tr></table></figure></p>
+<h3 id="2-LinkedHashMap"><a href="#2-LinkedHashMap" class="headerlink" title="2. LinkedHashMap"></a>2. LinkedHashMap</h3><p>他是HashMap的直接子类，但是他是链表实现。LinkedHashMap可以认为是HashMap+LinkedList，即它既使用HashMap操作数据结构，又使用LinkedList维护插入元素的先后顺序。<br>LinkedHashMap虽然增加了时间和空间上的开销，但是<strong>通过维护一个运行于所有条目的双向链表，LinkedHashMap保证了元素迭代的顺序。该迭代顺序可以是插入顺序或者是访问顺序。</strong><br><em>它具有如下特点：</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">项目</th>
+<th style="text-align:center">结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LinkedHashMap是否允许null值</td>
+<td style="text-align:center">Key和Value都允许为null</td>
+</tr>
+<tr>
+<td style="text-align:center">LinkedHashMap是否允许重复数据</td>
+<td style="text-align:center">Key重复会覆盖、Value允许重复</td>
+</tr>
+<tr>
+<td style="text-align:center">LinkedHashMap是否有序</td>
+<td style="text-align:center"><strong>有序</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">LinkedHashMap是否线程安全</td>
+<td style="text-align:center">非线程安全</td>
+</tr>
+</tbody>
+</table>
+<p>1)、创建对象及添加数据：使用put()添加数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">import java.util.LinkedHashMap;</div><div class="line"></div><div class="line">LinkedHashMap&lt;String, String&gt; map = new LinkedHashMap&lt;String, String&gt;();</div><div class="line">		</div><div class="line">map.put(&quot;西游记&quot;, &quot;吴承恩&quot;);</div><div class="line">map.put(&quot;三国演义&quot;, &quot;罗贯中&quot;);</div><div class="line">map.put(&quot;红楼梦&quot;, &quot;曹雪芹&quot;);</div><div class="line">map.put(null, null);  //允许添加null值</div><div class="line">map.put(&quot;水浒传&quot;, &quot;施耐庵&quot;);</div></pre></td></tr></table></figure></p>
 <p>2)、遍历输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//与HashMap一样使用迭代器输出</div><div class="line">Iterator iter  = map.keySet().iterator();</div><div class="line">while(iter.hasNext())&#123;</div><div class="line">	String key = (String) iter.next();</div><div class="line">	System.out.println(key+&quot;：&quot;+map.get(key)); //使用HashMap中的get()方法访问key对应的值</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>输出结果为：可以看出输出顺序与添加顺序一样<br>![](<a href="http://oxua0flmy.bkt.clouddn.com/20171112100137.png" target="_blank" rel="external">http://oxua0flmy.bkt.clouddn.com/20171112100137.png</a></p>
+<p>输出结果为：可以看出输出顺序与添加顺序一样<br><img src="http://oxua0flmy.bkt.clouddn.com/20171112100137.png" alt="结果"></p>
 <h3 id="3-Hashtable"><a href="#3-Hashtable" class="headerlink" title="3. Hashtable"></a>3. Hashtable</h3><h3 id="4-TreeMap"><a href="#4-TreeMap" class="headerlink" title="4. TreeMap"></a>4. TreeMap</h3>
       
     </div>
